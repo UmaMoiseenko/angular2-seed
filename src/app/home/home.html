@@ -1,0 +1,17 @@
+<p> canvas drag / resize test</p>
+
+<div class="wrapper">
+	<canvas class='image' width="300" height="300"></canvas>
+	<canvas 
+		[ngClass]="{
+			'is-cursorMove': isWithinXY && !isMouseDown && !isNearBorder(),
+			'is-cursorGrabbing': isDragging && isMouseDown || isNearBorder()}"
+		(mousedown)="onMouseDown($event)"
+		(mousemove)="onMouseMove($event)"
+		(mouseup)="onMouseUp()"
+		(mouseout)="onMouseOut()"
+		#jsCropper 
+		id="canvas" 
+		width="300" 
+		height="300"></canvas>
+</div>
